@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `My Blog`,
     description: `A blog about frontend development`,
-    author: `@myblog`,
+    author: `@igorsouza-dev`,
+    position: 'Javascript Engineer',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,4 +32,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

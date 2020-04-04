@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Avatar from '../Avatar';
 import * as S from './styles';
 

@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import * as S from '../components/Post/styles';
 import RecommendedPosts from '../components/RecommendedPosts';
+import Comments from '../components/Comments';
 
 const BlogPost = ({ data, pageContext }) => {
   const {
@@ -11,6 +12,7 @@ const BlogPost = ({ data, pageContext }) => {
       frontmatter: { title, date, description },
       html,
       timeToRead,
+      fields: { slug },
     },
   } = data;
   const next = pageContext.nextPost;
@@ -30,6 +32,7 @@ const BlogPost = ({ data, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </S.MainContent>
       <RecommendedPosts next={next} previous={previous} />
+      <Comments title={title} url={slug} />
     </Layout>
   );
 };
@@ -41,6 +44,9 @@ export const query = graphql`
         title
         description
         date(locale: "en-US", formatString: "DD MMMM[,] YYYY")
+      }
+      fields {
+        slug
       }
       html
       timeToRead

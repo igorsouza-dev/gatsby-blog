@@ -5,6 +5,7 @@ const postsQuery = `{
         objectID: id
         frontmatter {
           category
+          background
           title
           description
           date_timestamp: date

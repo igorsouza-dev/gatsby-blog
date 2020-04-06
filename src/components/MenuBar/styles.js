@@ -7,13 +7,14 @@ export const MenuBarWrapper = styled.aside`
   justify-content: space-between;
   align-items: center;
 
-  background: #192734;
-  border-left: 1px solid #38444d;
+  background: var(--mediumBackground);
+  border-left: 1px solid var(--borders);
   padding: 0.8rem 0;
   position: fixed;
   right: 0;
   width: 2.75rem;
   height: 100vh;
+  transition: background 0.5s;
 `;
 
 export const MenuBarGroup = styled.div`
@@ -26,14 +27,20 @@ export const MenuBarLink = styled(Link)`
 `;
 
 export const MenuBarItem = styled.span`
-  color: #8899a6;
+  color: var(--texts);
   display: block;
   padding: 1.1rem;
   cursor: pointer;
   position: relative;
   height: 1.5rem;
   width: 1.5rem;
+  &.light {
+    color: #d4d400;
+    &:hover {
+      color: #e2e240;
+    }
+  }
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 `;

@@ -10,4 +10,9 @@ export const LayoutMain = styled.main`
   padding: 0 1.75rem 0 14rem;
   width: 100%;
   transition: background 0.5s;
+  body#grid & {
+    grid-template-areas:
+      'posts'
+      'pagination';
+  }
 `;

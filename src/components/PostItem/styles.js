@@ -6,6 +6,10 @@ export const PostItemLink = styled(Link)`
   display: flex;
   text-decoration: none;
 
+  body#grid & {
+    background-color: var(--background);
+  }
+
   &:hover {
     color: var(--highlight);
   }
@@ -17,6 +21,12 @@ export const PostItemWrapper = styled.div`
   display: flex;
   padding: 1rem 1.5rem;
   width: 100%;
+  body#grid & {
+    border: none;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const PostItemTag = styled.div`
@@ -31,12 +41,19 @@ export const PostItemTag = styled.div`
   min-height: 90px;
   min-width: 90px;
   text-transform: uppercase;
+  body#grid & {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const PostItemInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
+  body#grid & {
+    line-height: 1.1;
+    margin: 0.8rem 0;
+  }
 `;
 
 export const PostItemDate = styled.time`

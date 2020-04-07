@@ -2,11 +2,11 @@ require('dotenv').config();
 const queries = require('./src/utils/algolia_queries');
 module.exports = {
   siteMetadata: {
-    title: `John Doe`,
+    title: `Igor Souza Blog`,
     description: `A blog about frontend development`,
     author: `@igorsouza-dev`,
     position: 'Javascript Engineer',
-    siteUrl: 'https://johndoe.com.br',
+    siteUrl: 'https://igorsouza-blog.netlify.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -82,5 +82,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
+    `gatsby-plugin-netlify-cms`,
   ],
 };

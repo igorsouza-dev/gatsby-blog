@@ -1,0 +1,48 @@
+backend:
+  name: github
+  repo: igorsouza-dev/gatsby-blog
+  branch: master
+  site_domain: https://igorsouza-blog.netlify.com/
+
+publish_mode: editorial_workflow
+media_folder: 'static/assets/img'
+public_folder: 'assets/img'
+
+collections:
+  - name: 'posts' # Used in routes, e.g., /admin/collections/blog
+    label: 'Posts' # Used in the UI
+    folder: 'posts' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - {
+          label: 'Date',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD hh:mm:ss',
+        }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options: ['jekyll', 'css', 'js', 'html', 'svg', 'dev', 'misc'],
+        }
+      - {
+          label: 'Background',
+          name: 'background',
+          widget: 'select',
+          options:
+            [
+              { label: 'Jekyll', value: '#B31917' },
+              { label: 'CSS', value: '#2DA0C3' },
+              { label: 'JS', value: '#D6BA32' },
+              { label: 'HTML', value: '#EB7728' },
+              { label: 'SVG', value: '#7D669E' },
+              { label: 'Dev', value: '#637a91' },
+              { label: 'Misc', value: '#7AAB13' },
+            ],
+        }
+      - { label: 'image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

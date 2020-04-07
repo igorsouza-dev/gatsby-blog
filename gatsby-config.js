@@ -6,6 +6,7 @@ module.exports = {
     description: `A blog about frontend development`,
     author: `@igorsouza-dev`,
     position: 'Javascript Engineer',
+    siteUrl: 'https://johndoe.com.br',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

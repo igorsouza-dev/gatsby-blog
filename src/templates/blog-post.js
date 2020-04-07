@@ -9,7 +9,7 @@ import Comments from '../components/Comments';
 const BlogPost = ({ data, pageContext }) => {
   const {
     markdownRemark: {
-      frontmatter: { title, date, description },
+      frontmatter: { title, date, description, image },
       html,
       timeToRead,
       fields: { slug },
@@ -19,7 +19,7 @@ const BlogPost = ({ data, pageContext }) => {
   const previous = pageContext.previousPost;
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description} image={image} />
 
       <S.PostHeader>
         <S.PostDate>
@@ -44,6 +44,7 @@ export const query = graphql`
         title
         description
         date(locale: "en-US", formatString: "DD MMMM[,] YYYY")
+        image
       }
       fields {
         slug

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import * as S from './styles';
 
 const Pagination = ({
@@ -12,11 +12,31 @@ const Pagination = ({
   nextPage,
 }) => (
   <S.PaginationWrapper>
-    {!isFirst && <Link to={prevPage}>← Previous page</Link>}
+    {!isFirst && (
+      <AniLink
+        cover
+        direction="left"
+        duration="0.6"
+        bg="var(--background)"
+        to={prevPage}
+      >
+        ← Previous page
+      </AniLink>
+    )}
     <p>
       {currentPage} of {numPages}
     </p>
-    {!isLast && <Link to={nextPage}>Next Page →</Link>}
+    {!isLast && (
+      <AniLink
+        cover
+        direction="right"
+        duration="0.6"
+        bg="var(--background)"
+        to={nextPage}
+      >
+        Next Page →
+      </AniLink>
+    )}
   </S.PaginationWrapper>
 );
 

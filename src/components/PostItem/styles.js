@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import media from 'styled-media-query';
 
 export const PostItemLink = styled(Link)`
   color: var(--texts);
@@ -27,6 +28,11 @@ export const PostItemWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+  ${media.lessThan('large')`
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  `}
 `;
 
 export const PostItemTag = styled.div`
@@ -44,6 +50,14 @@ export const PostItemTag = styled.div`
   body#grid & {
     margin-bottom: 1.5rem;
   }
+  ${media.lessThan('large')`
+    border-radius: 0;
+    font-size: 1rem;
+    min-height: auto;
+    min-width: auto;
+    padding: .2rem .5rem;
+    margin-bottom: .7rem;
+  `}
 `;
 
 export const PostItemInfo = styled.div`
@@ -54,6 +68,9 @@ export const PostItemInfo = styled.div`
     line-height: 1.1;
     margin: 0.8rem 0;
   }
+  ${media.lessThan('large')`
+    margin: 0;
+  `}
 `;
 
 export const PostItemDate = styled.time`

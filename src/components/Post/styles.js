@@ -201,3 +201,19 @@ export const MainContent = styled.section`
     }
   }
 `;
+
+export const CenterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 1rem 4rem;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--postColor);
+  }
+`;

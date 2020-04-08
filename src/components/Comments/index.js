@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import * as S from './styles';
 
 const Comments = ({ url, title }) => {
-  const completeURL = `https://johndoe.com/${url}`;
+  const completeURL = `${process.env.GATSBY_APP_URL}${url}`;
   return (
     <S.CommentsWrapper>
       <S.CommentsTitle>Comments</S.CommentsTitle>
       <ReactDisqusComments
-        shortname="igorsouza"
+        shortname={process.env.GATSBY_DISQUS_SHORTNAME}
         identifier={completeURL}
         title={title}
         url={completeURL}

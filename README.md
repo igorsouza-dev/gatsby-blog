@@ -15,6 +15,7 @@ A simple blog made with Gatsby.js + React.js + Netlify CMS
 - Mobile friendly
 - Dark/Light theme
 - Grid/List display
+- PWA and offline
 
 ## Setting up
 
@@ -48,9 +49,17 @@ or
 gatsby build
 ```
 
-## Searching in blog posts
+## Searching blog posts
 
 In order for the blog posts searching to work (route /search), you need to setup an Algolia account and create the indexes. To upload the content to Algolia just run `gatsby build`. Don't forget to inform your api keys at the `.env`.
+
+## The CMS
+
+When you are in developing mode, just access the `/admin` route. This will open the UI for the CMS.
+
+## Comments Section
+
+The comment section is powered by [Disqus](https://disqus.com/), you must setup an account at their website and inform the shortname at the `.env` file. Also, after publishing your app, you need to inform the url at the `.env` file.
 
 ## License
 
